@@ -18,7 +18,7 @@ void loop() {
     Serial.print(myChar);
     mASCII++;
 if (mASCII == 127) {       
-    Serial.println();         // add LF
+    Serial.println();         // add CRLF
   }   
  } 
 else if (mLineCount != 5) {   // line counter
