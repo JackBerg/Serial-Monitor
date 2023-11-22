@@ -2,7 +2,7 @@
 Simple Serial Monitor Visual Basic 2022 Code  Receiver from LGT8F328P &amp; USB Port
 
 Use VB 2022, copy & paste code.
-This version use minimal codes to demonstrate the receiving of ASCII characters throught USB Port.
+This version use minimal codes to demonstrate the receiving of ASCII characters through USB Port.
 
 
 
