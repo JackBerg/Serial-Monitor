@@ -1,0 +1,40 @@
+'Serial Monitor Tutorial-4 Minimal Codes
+Imports System.IO.Ports
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+        ComboBox1.SelectedItem = "COM7"
+        ComboBox2.SelectedItem = "9600"
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Button1.Text = "Connect" Then
+            SerialPort1.BaudRate = Val(ComboBox2.SelectedItem)
+            SerialPort1.PortName = ComboBox1.SelectedItem
+            ComboBox1.Enabled = False
+            ComboBox2.Enabled = False
+            Try
+                SerialPort1.Open()
+                SerialPort1.DiscardInBuffer()
+                RichTextBox1.Clear()
+                Button1.Text = "Disconnect"
+            Catch ex As Exception
+            End Try
+        Else
+            SerialPort1.DiscardInBuffer()
+            SerialPort1.Close()
+            Button1.Text = "Connect"
+            ComboBox1.Enabled = True
+            ComboBox2.Enabled = True
+        End If
+    End Sub
+
+    Private Sub SerialPortReceive(sender As Object, e As SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
+        RichTextBox1.Text &= SerialPort1.ReadLine()
+        'RichTextBox1.Text = RichTextBox1.Text.Replace("{", "#")  'to remove char
+        'Autoscroll to bottom
+        RichTextBox1.SelectionStart = RichTextBox1.Text.Length
+        RichTextBox1.ScrollToCaret()
+    End Sub
+End Class
