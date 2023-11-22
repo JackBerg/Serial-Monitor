@@ -1,0 +1,38 @@
+//sketch_LGT8F328P_Character_Map_1
+// include to be able change the prescaler frequency 32Mhz
+#include <avr/power.h>
+
+void setup() {
+  // put your setup code here, to run once:
+  clock_prescale_set(clock_div_1);
+  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+while (!Serial) {
+    ;  // wait for serial port to connect. Needed for native USB port only
+  }
+}
+int mASCII = 33;  //start of character
+int mLineCount = 1;   // end of line count
+int mLastLine = 5;   //line number
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(13, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1);                // wait for a second
+  digitalWrite(13, LOW);   // turn the LED off by making the voltage LOW
+  delay(1);                // wait for a second  
+//if char,line not end
+ if (mASCII != 127) {
+    char myChar = mASCII;
+    Serial.print(myChar);
+    mASCII++;
+// add LF end of line    
+if (mASCII == 127) {
+    Serial.println();
+  }   
+ } 
+// reset for the next char, line
+else if (mLineCount != mLastLine) {
+   mASCII = 33;
+   mLineCount++;
+ }
+}
