@@ -14,7 +14,8 @@ int mLineCount = 1;           // line counter
 
 void loop() {
    if (mASCII != 127) {       // send ASCII under 127
-    Serial.print(Char(mASCII));
+    char myChar = mASCII;
+    Serial.print(myChar);
     mASCII++;
 if (mASCII == 127) {       
     Serial.println();         // add LF
