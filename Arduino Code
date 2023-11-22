@@ -22,8 +22,7 @@ void loop() {
   delay(1);                // wait for a second  
 //if char,line not end
  if (mASCII != 127) {
-    char myChar = mASCII;
-    Serial.print(myChar);
+    Serial.print(Char(mASCII));
     mASCII++;
 // add LF end of line    
 if (mASCII == 127) {
