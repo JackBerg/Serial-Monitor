@@ -9,23 +9,19 @@ while (!Serial) {
     ;  // wait for serial port to connect. Needed for native USB port only
   }
 }
-int mASCII = 33;            // start of ASCII character
-int mLineCount = 1;         // line counter
+int mASCII = 33;              // start of ASCII character
+int mLineCount = 1;           // line counter
 
 void loop() {
-  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1);                 // wait for a second
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(1);                 // wait for a second  
- if (mASCII != 127) {       // send ASCII under 127
+   if (mASCII != 127) {       // send ASCII under 127
     Serial.print(Char(mASCII));
     mASCII++;
 if (mASCII == 127) {       
-    Serial.println();       // add LF
+    Serial.println();         // add LF
   }   
  } 
-else if (mLineCount != 5) { // line counter
-   mASCII = 33;             // reset ASCII line 
+else if (mLineCount != 5) {   // line counter
+   mASCII = 33;               // reset ASCII line 
    mLineCount++;
  }
 }
