@@ -18,9 +18,9 @@ if (mASCII != 127) {
     char myChar = mASCII;
     Serial.print(myChar);
     mASCII++;
-if (mASCII == 127) {
-    Serial.println();
-  }
+if (mASCII == 127) {          //
+    Serial.println();         // must be here to work
+  }                           //
  } 
 
 else if (mLineCount != 5) {
