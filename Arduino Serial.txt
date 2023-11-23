@@ -1,10 +1,10 @@
 // sketch_LGT8F328P_Character_Map_2
 // include to be able change the prescaler frequency 32Mhz
 // replace board.txt
-#include <avr/power.h>
+#include <avr/power.h>       // to enable 32mHz
 
 void setup() {
-  clock_prescale_set(clock_div_1);
+  clock_prescale_set(clock_div_1); // to enable 32mHz
   Serial.begin(9600);
   while (!Serial) {
       ;  // wait for serial port to connect. Needed for native USB port only
