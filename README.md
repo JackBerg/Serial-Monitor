@@ -1,5 +1,5 @@
 # Serial-Monitor
-Simple Serial Monitor using Visual Basic 2022 Code to monitor serisl data.
+Simple Serial Monitor using Visual Basic 2022 Code to monitor serial data.
 This use a LGT8F328P mini EVB to send a set of ASCII characters through USB Port.
 Nedeed: replace the file boards.txt for the 32mHz clock
 
