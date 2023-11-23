@@ -19,7 +19,7 @@ if (mASCII != 127) {
     Serial.print(myChar);
     mASCII++;
 if (mASCII == 127) {          //
-    Serial.println();         // must be here to work
+    Serial.println();         // add CRLF (must be here to work)
   }                           //
  } 
 
