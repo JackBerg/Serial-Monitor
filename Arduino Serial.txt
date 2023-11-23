@@ -24,7 +24,7 @@ if (mASCII != 127) {         // isolate mASCII under 127 if true bypass 'else if
 else if (mLineCount != 5) {  // true if line mLineCount not = 5      
     mLineCount++;            // increase mLineCount                  
 if (mASCII == 127) {         // true if mASCII = 127
-    mASCII = 33;             // reset mASCII line 
+    mASCII = 33;             // reset mASCII to 33
     Serial.println();        // add CRLF
    }   
   }
