@@ -6,6 +6,11 @@ This version use minimal codes to demonstrate the receiving of ASCII characters 
 The LGT8F328P already contain the Arduino code to send characters.
 Replace the file boards.txt to get the 32mHz clock
 
+Resources and Tools:
+
+Here's a link to the instructions for installing the support files into the Arduino IDE:
+https://github.com/RalphBacon/LGT8F328P-Arduino-Clone-Chip-ATMega328P
+
 
 
 ![FT232](https://github.com/JackBerg/Serial-Monitor/assets/66843365/1de466fd-f55b-440e-8f7b-a308edbbf550)
