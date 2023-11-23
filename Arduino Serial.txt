@@ -15,14 +15,14 @@ int mLineCount = 1;          // line counter
 
 void loop() {
 
-if (mASCII != 127) {         // isolate mASCII under 127
-    char myChar = mASCII;    // convert mASCII to char 
-    Serial.print(myChar);    // print mASCII 
-    mASCII++;                // increase mASCII 
- } 
+if (mASCII != 127) {         // isolate mASCII under 127 if true bypass 'else if' sub routine
+    char myChar = mASCII;    // convert mASCII to char
+    Serial.print(myChar);    // print mASCII
+    mASCII++;                // increase mASCII
+ }
 
-else if (mLineCount != 5) {  // true if line mLineCount not = 5
-    mLineCount++;            // increase mLineCount
+else if (mLineCount != 5) {  // true if line mLineCount not = 5      
+    mLineCount++;            // increase mLineCount                  
 if (mASCII == 127) {         // true if ASCII = 127
     mASCII = 33;             // reset ASCII line 
     Serial.println();        // add CRLF
