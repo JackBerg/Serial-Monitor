@@ -15,7 +15,7 @@ int mLineCount = 1;          // line counter
 
 void loop() {
 
-if (mASCII != 127) {         // send ASCII under 127
+if (mASCII != 127) {         // isolate mASCII under 127
     char myChar = mASCII;    // convert mASCII to char 
     Serial.print(myChar);    // print mASCII 
     mASCII++;                // increase mASCII 
