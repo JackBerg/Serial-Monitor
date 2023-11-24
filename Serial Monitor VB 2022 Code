@@ -32,7 +32,7 @@ Public Class Form1
 
     Private Sub SerialPortReceive(sender As Object, e As SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
         RichTextBox1.Text &= SerialPort1.ReadLine()
-        'RichTextBox1.Text = RichTextBox1.Text.Replace("{", "#")  'to remove char
+        'RichTextBox1.Text = RichTextBox1.Text.Replace("{", "#")  'to replace char
         'Autoscroll to bottom
         RichTextBox1.SelectionStart = RichTextBox1.Text.Length
         RichTextBox1.ScrollToCaret()
